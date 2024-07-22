@@ -7,7 +7,7 @@ set(EXTENSION_NAME ${TARGET_NAME}_extension)
 project(${TARGET_NAME})
 include_directories(src/include)
 
-set(EXTENSION_SOURCES src/aws_extension.cpp src/aws_secret.cpp)
+set(EXTENSION_SOURCES src/aws_extension.cpp src/aws_secret.cpp src/aws_dynamo.cpp)
 add_library(${EXTENSION_NAME} STATIC ${EXTENSION_SOURCES})
 
 set(PARAMETERS "-warnings")

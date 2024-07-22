@@ -1,0 +1,12 @@
+# name: test/sql/aws_dynamo.test
+# description: test aws dynamo transformations
+# group: [aws]
+
+require aws
+
+set ignore_error_messages
+
+query I
+SELECT dynamo_unmarshall({'S': 'String'});
+----
+String

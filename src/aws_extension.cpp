@@ -2,6 +2,7 @@
 
 #include "aws_secret.hpp"
 #include "aws_extension.hpp"
+#include "aws_dynamo.hpp"
 
 #include "duckdb.hpp"
 #include "duckdb/common/exception.hpp"
@@ -138,6 +139,8 @@ static void LoadInternal(DuckDB &db) {
 	ExtensionUtil::RegisterFunction(*db.instance, function_set);
 
 	CreateAwsSecretFunctions::Register(*db.instance);
+
+	DynamoFunctions::Register(*db.instance);
 }
 
 void AwsExtension::Load(DuckDB &db) {
